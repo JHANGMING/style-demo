@@ -1,5 +1,6 @@
 const data={
- title:"Title Title",
+ pageA:{
+  title:"Title Title",
  desc:"Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc",
  buttons:[
   {
@@ -11,5 +12,20 @@ const data={
     theme:"isBorder"
   }
  ]  
+ },
+ pageB:{
+  title:"hahaha",
+ desc:"11,22,,11",
+ buttons:[
+  {
+    text:"ContainedButton",
+    theme:"isContain"
+  },
+  {
+    text:"BorderButton",
+    theme:"isBorder"
+  }
+ ]  
+ }
 }
 export default data;

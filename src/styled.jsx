@@ -82,23 +82,23 @@ export const ButtonStyle=css`
   border-radius: 999px;
   font-size: 18px;
   cursor: pointer;
-
-
 `;
-export const DefaultButton=styled.button`
-  ${ButtonStyle}
-  ${({theme})=>{
-    if(theme==="isContain"){
-      return css`
+
+const containStyle=css`
     background-color: #586AF2;
     border: none;
     color: #FFFFFF;
-    `}
-    if(theme==="isBorder"){
-      return css`
+    `
+const boderStyle= css`
     background-color: transparent;
     border: 2px solid #1F2E4E;
-    `}
+    `  
+
+export const DefaultButton=styled.button`
+  ${ButtonStyle}
+  ${({theme})=>{
+    if(theme==="isContain")return containStyle
+    if(theme==="isBorder")return boderStyle
   }}
  
 

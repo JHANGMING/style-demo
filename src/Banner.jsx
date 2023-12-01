@@ -1,21 +1,24 @@
 
 import {Wrapper,Container,Text,Title,Desc,Buttons,DefaultButton,Image} from "./styled"
-import data from "./data"
+import dataset from "./data"
 
-const Banner=()=>{
+const Banner=({page})=>{
+  const data=dataset[page]
+  if(!data) return null;
+  const {title,desc}=data
   return(
     <Wrapper>
       <Container>
         <Text>
           <Title>
-            {data.title}
+            {title}
           </Title>
           <Desc>
-            {data.desc}
+            {desc}
           </Desc>
           <Buttons>
             {data.buttons.map((button)=>(
-              <DefaultButton theme={button.theme}>
+              <DefaultButton theme={button.theme} key={button.text}>
                 {button.text}
               </DefaultButton>
             ))}

@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <Banner/>
+      <Banner page="pageA"/>
+      <Banner page="pageB"/>
     </>
   )
 }
