@@ -85,19 +85,31 @@ const ButtonStyle=css`
   font-size: 18px;
   cursor: pointer;
 `;
-
-const ContainedButton = styled.button`
+const DefaultButton=styled.button`
   ${ButtonStyle}
-  background-color: #586AF2;
-  border: none;
-  color: #FFFFFF;
+  ${({isContain})=>isContain && css`
+    background-color: #586AF2;
+    border: none;
+    color: #FFFFFF;
+  `}
+  ${({isBorder})=>(isBorder && css`
+    background-color: transparent;
+    border: 2px solid #1F2E4E;
+  `)}
 `;
 
-const BorderButton = styled.button`
-  ${ButtonStyle}
-  background-color: transparent;
-  border: 2px solid #1F2E4E;
-`;
+// const ContainedButton = styled.button`
+//   ${ButtonStyle}
+//   background-color: #586AF2;
+//   border: none;
+//   color: #FFFFFF;
+// `;
+
+// const BorderButton = styled.button`
+//   ${ButtonStyle}
+//   background-color: transparent;
+//   border: 2px solid #1F2E4E;
+// `;
 
 const Image = styled.img`
   display: block;
@@ -126,12 +138,12 @@ const Banner=()=>{
             Desc Desc Desc Desc Desc Desc
           </Desc>
           <Buttons>
-            <ContainedButton>
+            <DefaultButton isContain>
               ContainedButton
-            </ContainedButton>
-            <BorderButton>
+            </DefaultButton>
+            <DefaultButton isBorder>
               BorderButton
-            </BorderButton>
+            </DefaultButton>
           </Buttons>
         </Text>
         <Image src="https://drive.google.com/uc?export=view&id=1zY6sSfDXapavJ2goiO7q6L3mtr7GalFM" alt="Logo" />
