@@ -1,6 +1,6 @@
 
 import {Wrapper,Container,Text,Title,Desc,Buttons,DefaultButton,Image} from "./styled"
-import dataset from "./data"
+import dataset,{image} from "./data"
 
 const Banner=({page})=>{
   const data=dataset[page]
@@ -30,7 +30,7 @@ const Banner=({page})=>{
             </DefaultButton> */}
           </Buttons>
         </Text>
-        <Image src="https://drive.google.com/uc?export=view&id=1zY6sSfDXapavJ2goiO7q6L3mtr7GalFM" alt="Logo" />
+        <Image src={image.src} alt={image.alt} />
       </Container>
     </Wrapper>
   )
