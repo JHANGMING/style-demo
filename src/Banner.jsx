@@ -1,6 +1,6 @@
-import styled ,{css} from "styled-components";
+
 import {Wrapper,Container,Text,Title,Desc,Buttons,DefaultButton,Image} from "./styled"
-//background
+import data from "./data"
 
 const Banner=()=>{
   return(
@@ -8,19 +8,23 @@ const Banner=()=>{
       <Container>
         <Text>
           <Title>
-            Title Title
+            {data.title}
           </Title>
           <Desc>
-            Desc Desc Desc Desc Desc Desc
-            Desc Desc Desc Desc Desc Desc
+            {data.desc}
           </Desc>
           <Buttons>
-            <DefaultButton isContain>
+            {data.buttons.map((button)=>(
+              <DefaultButton theme={button.theme}>
+                {button.text}
+              </DefaultButton>
+            ))}
+            {/* <DefaultButton theme="isContain">
               ContainedButton
             </DefaultButton>
-            <DefaultButton isBorder>
+            <DefaultButton theme="isBorder">
               BorderButton
-            </DefaultButton>
+            </DefaultButton> */}
           </Buttons>
         </Text>
         <Image src="https://drive.google.com/uc?export=view&id=1zY6sSfDXapavJ2goiO7q6L3mtr7GalFM" alt="Logo" />
